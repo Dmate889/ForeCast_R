@@ -1,6 +1,10 @@
 const express = require('express');
-const app = express();
 
-app.get('/', (req,res) => {
-    res.send('Welcome to the ForeCast_R!');
+const router = express.Router();
+
+router.get('/', (req, res) => {
+    res.send('Welcome to ForeCast_R!');
 });
+
+module.exports = router;
+
