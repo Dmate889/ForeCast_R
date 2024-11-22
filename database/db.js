@@ -24,7 +24,10 @@ async function getUser(username, password, callback){
     const query = 'SELECT username FROM users WHERE username = ?';
 
     db.run(query, [username], async (err,row) =>{
-        if(err) console.log(`Could not fetch user with name: ${username}`);
+        if(err) {ű
+            console.log(`Could not fetch user with name: ${username}`);
+            return callback(err);
+        }
         else if(row && await bcrypt.compare(password, row.password)){
             const token = jwt.sign({id: row.id, username: row.username}, JWT_SECRET, {expiresIn: '5h'});
             callback(null, {success: true, token});
