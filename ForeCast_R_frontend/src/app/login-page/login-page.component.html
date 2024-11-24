@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="login-form">
+        <h1>Login</h1>
+        <form (ngSubmit)="loginUser($event)">
+            <label for="username">Username</label>
+            <input type="text" autocomplete="off" id="username" name="username" placeholder="Enter your username">
+            <label for="password">Password</label>
+            <input type="password" autocomplete="off" id="password" name="password" placeholder="Enter your password">
+            <button type="submit">Login</button>
+            <button type="button">Register</button>
+        </form>
+    </div>
+    <div class="main-text">
+        <h1 class="main-h1">Welcome to ForeCast_R!</h1> 
+        <h3 class="main-h3">This is a project created by Mate Debreczeni</h3>
+    </div>
+</div>
